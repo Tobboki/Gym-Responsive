@@ -252,6 +252,7 @@ button {
 }
 
 .register-button {
+  width: fit-content;
   padding: 1em 2em;
   background-color: white;
   color: black;
@@ -259,3 +260,34 @@ button {
 }
 
 /* *General queries* */
+@media screen and (max-width: 1320px) {
+
+}
+
+@media screen and (max-width: 798px) {
+  .nav-toggle-icon.show,
+  .nav-close-icon.show {
+    display: block;
+  }
+
+  .nav-list {
+    width: 100%;
+    padding-block: 2em;
+    position: fixed;
+    top: 6em;
+    right: -100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1em;
+    background-color: var(--body-clr);
+    text-align: center;
+    box-shadow: 0 4px 4px hsla(30, 5%, 57%, 0.2);
+    transition: right 0.4s ease-in-out;
+  }
+
+  .nav-list[data-menu-visible] {
+    right: 0;
+  }
+
+}
