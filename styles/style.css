@@ -182,6 +182,10 @@ button {
   max-width: 1280px;
 }
 
+.main {
+  overflow: hidden;
+}
+
 .active-nav-link a {
   color: var(--primary-clr);
 }
@@ -257,6 +261,30 @@ button {
   background-color: white;
   color: black;
   font-weight: var(--fw-bold);
+}
+
+/* Scroll up */
+.scroll-up {
+  padding: 0.5em;
+  position: fixed;
+  right: 1em;
+  bottom: -50em;
+  display: inline-flex;
+  font-size: 1.25rem;
+  background-color: var(--primary-clr);
+  color: var(--body-clr);
+  border-radius: 0.35em;
+  box-shadow: 0 4px 16px hsla(22, 100%, 8%, 0.2);
+  z-index: var(--z-tooltip);
+  transition: bottom 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.scroll-up:hover {
+  transform: translateY(-0.5em);
+}
+
+.show-scroll-up {
+  bottom: 3em;
 }
 
 /* *General queries* */

@@ -17,4 +17,14 @@ navToggleButton.addEventListener('click', toggleMenu);
 
 
 const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => link.addEventListener('click', toggleMenu));
+navLinks.forEach(link => link.addEventListener('click', () => {
+  toggleMenu();
+}));
+
+/* Scroll up */
+const scrollUp = () => {
+  const scrollUpArrow = document.getElementById('scroll-up');
+  window.scrollY >= 350 ? scrollUpArrow.classList.add('show-scroll-up')
+                        : scrollUpArrow.classList.remove('show-scroll-up');
+};
+window.addEventListener('scroll', scrollUp);
