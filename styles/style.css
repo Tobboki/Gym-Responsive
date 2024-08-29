@@ -177,7 +177,7 @@ button {
 
 .container {
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0 2em;
   width: 100%;
   max-width: 1280px;
 }
@@ -193,9 +193,8 @@ button {
 /* *Styles* */
 
 .header {
-  padding: 2em 0;
+  padding: 2em;
   position: fixed;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -235,6 +234,8 @@ button {
 .nav-link {
   padding: 0.5em 1em;
   position: relative;
+  display: flex;
+  align-items: center;
   color: var(--title-clr);
   font-family: var(--primary-ff);
   font-weight: var(--fw-bold);
@@ -292,7 +293,7 @@ button {
 
 }
 
-@media screen and (max-width: 798px) {
+@media screen and (max-width: 926px) {
   .nav-toggle-icon.show,
   .nav-close-icon.show {
     display: block;
