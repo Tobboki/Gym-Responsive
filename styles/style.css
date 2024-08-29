@@ -1,4 +1,7 @@
 /* *Imports* */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
 
 /* *Root variables* */
 :root {
@@ -22,8 +25,8 @@
   --body-clr: hsl(180, 12%, 8%);
 
   /* Font */
-  --body-font: 'Red Hat Display', sans-serif;
-  --second-font: 'Kaushan Script', cursive;
+  --primary-ff: 'Red Hat Display', sans-serif;
+  --secondary-ff: 'Kaushan Script', cursive;
   --biggest-fs: 2rem;
   --bigger-fs: 1.5rem;
   --big-fs: 1.25rem;
@@ -60,6 +63,7 @@
 
 /* Prevent font size inflation */
 html {
+  scroll-behavior: smooth;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
@@ -142,6 +146,22 @@ textarea:not([rows]) {
 
 /* *Compound consistent styles* */
 
+body {
+  background-color: var(--body-clr);
+  color: var(--text-clr);
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  display: flex;
+  background: transparent;
+  color: var(--text-clr);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 /* *Utility classes* */
 .visually-hidden {
   position: absolute;
@@ -155,7 +175,87 @@ textarea:not([rows]) {
   border: 0;
 }
 
+.container {
+  margin: 0 auto;
+  padding: 0 1em;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.active-nav-link a {
+  color: var(--primary-clr);
+}
+
 /* *Styles* */
 
-/* *General queries* */
+.header {
+  padding: 2em 0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--body-clr);
+  color: var(--text-clr);
+  transition: box-shadow 0.4s;
+  box-shadow: 0 4px 4px hsla(22, 100%, 8%, 0.2);
+  z-index: 10;
+}
 
+.logo {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+  font-family: var(--primary-ff);
+  font-weight: var(--fw-black);
+  color: var(--title-clr);
+  text-decoration: none;
+}
+
+.logo img {
+  width: 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2em;
+}
+
+.nav-link {
+  padding: 0.5em 1em;
+  position: relative;
+  color: var(--title-clr);
+  font-family: var(--primary-ff);
+  font-weight: var(--fw-bold);
+}
+
+.nav-link:hover {
+  color: var(--text-clr-light);
+}
+
+.nav-link a {
+  text-decoration: none;
+}
+
+.nav-toggle-icon,
+.nav-close-icon {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--title-clr);
+}
+
+.register-button {
+  padding: 1em 2em;
+  background-color: white;
+  color: black;
+  font-weight: var(--fw-bold);
+}
+
+/* *General queries* */
