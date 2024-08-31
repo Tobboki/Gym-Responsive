@@ -27,7 +27,8 @@
   /* Font */
   --primary-ff: 'Red Hat Display', sans-serif;
   --secondary-ff: 'Kaushan Script', cursive;
-  --biggest-fs: 2.5rem;
+  --biggest-fs: 3rem;
+  --bigger-fs: 2.5rem;
   --big-fs: 2rem;
   --h1-fs: 1.5rem;
   --h2-fs: 1.25rem;
@@ -108,6 +109,11 @@ h3, h4 {
   text-wrap: balance;
 }
 
+/* Remove a elements text decorations */
+a {
+  text-decoration: none;
+}
+
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
@@ -163,6 +169,7 @@ button {
 }
 
 /* *Utility classes* */
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -185,16 +192,45 @@ button {
 .section {
   display: flex;
   flex-flow: column;
+  padding: 7em 0 0;
+}
+
+.section-data {
+  margin-bottom: 3em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  text-align: center;
+}
+
+.section-titles {
+  display: flex;
+  justify-content: center;
+  column-gap: 1em;
+}
+
+.section-title, 
+.section-title-stroke {
+  font-size: var(--biggest-fs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.125rem;
+  color: var(--title-clr);
+}
+
+.section-title-stroke {
+  -webkit-text-stroke: 1px var(--title-clr);
+  color: transparent;
+}
+
+.section-subtitle {
+  font-size: var(--bigger-fs);
+  font-family: var(--secondary-ff);
+  color: var(--primary-clr);
 }
 
 .grid {
   display: grid;
   gap: 1em;
-}
-
-.main {
-  display: flex;
-  flex-flow: column;
 }
 
 .button {
@@ -230,6 +266,7 @@ button {
 /* Header */
 .header {
   padding: 2em;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -297,6 +334,11 @@ button {
 }
 
 /* Main */
+.main {
+  display: flex;
+  flex-flow: column;
+}
+
 /* Home Section */
 .home {
   position: relative;
@@ -335,6 +377,7 @@ button {
 }
 
 .home-img {
+  padding: 0.5em;
   margin: 0 auto;
   width: 550px;
   display: block;
@@ -367,10 +410,86 @@ button {
 }
 
 /* Company Logos Section */
+  .companies-logos {
+    padding-top: 0;
+  }
+
 .company-logos-container {
+  padding: 0.5em 0;
   background-color: var(--title-clr-black);
   grid-template-columns: repeat(4 , 1fr);
   place-items: center;
+}
+
+/* Program Section */
+.programs-container {
+  display: flex;
+  gap: 2em;
+}
+
+.program-card {
+  position: relative;
+  padding: 1em 2em;
+  background-color:var(--title-clr-black);
+  display: grid;
+  row-gap: 1em;
+  transition: background-color .4s;
+}
+
+.program-card:hover {
+  background-color: var(--primary-clr);
+  color: var(--title-clr-black);
+}
+
+.program-img-container {
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  width: 64px;
+  height: 64px;
+  background-color: var(--primary-clr-gray);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background-color .4s;
+}
+
+.program-img {
+  width: 50px;
+}
+
+.program-card:hover .program-img-container {
+  background-color: var(--primary-clr-alt);
+}
+.program-title {
+  font-weight: var(--fw-bold);
+  color: var(--title-clr);
+}
+
+.program-title,
+.program-description {
+  transition: color .4s;
+}
+
+.program-card:hover .program-title,
+.program-card:hover .program-description {
+  color: var(--title-clr-black);
+}
+
+.program-button {
+  padding: 0 0.5em;
+  justify-self: flex-end;
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+  color: var(--title-clr-black);
+  transition: transform 0.3s;
+}
+
+.program-button i {
+  display: block;
+}
+
+.program-card:hover .program-button{
+  transform: translateX(0.25em);
 }
 
 /* Scroll up */
@@ -419,6 +538,16 @@ button {
 }
 
 @media screen and (max-width: 1064px) {
+  /* Utility Classes */
+  .section-title,
+   .section-title-stroke {
+     font-size: 2.125rem;
+   }
+ 
+   .section-subtitle {
+     font-size: 2.125rem;
+   }
+
   /* Home Section */
   .home-title {
     font-size: 4rem;
@@ -480,13 +609,29 @@ button {
 
   /* Company Logos Section */
   .company-logos-container {
+    padding: 1em;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+  }
+
+  /* Program Section */
+  .program-card {
+    padding: .75em 1.5em;
   }
 
 }
 
 @media screen and (max-width: 768px) {
+  /* Utility Classes */
+  .section-title,
+   .section-title-stroke {
+     font-size: 1.5rem;
+   }
+ 
+   .section-subtitle {
+     font-size: 1.5rem;
+   }
+
   /* Home Section */
   .home-title {
     font-size: 3.25rem;
@@ -519,9 +664,27 @@ button {
   .home-triangle-3 {
     width: 325px;
   }
+
+  /* Program Section */
+  .programs-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+  }
 }
 
 @media screen and (max-width: 446px) {
+  /* Utility Classes */
+  .section-title,
+   .section-title-stroke {
+     font-size: 1.125rem;
+   }
+ 
+   .section-subtitle {
+     font-size: 1.125rem;
+   }
+
   /* Home */
   .home-title {
     font-size: 2.5rem;
@@ -546,4 +709,10 @@ button {
   .home-triangle-3 {
     width: 275px;
   }
+
+   /* Program Section */
+   .programs-container {
+     grid-template-columns: 300px;
+     justify-content: center;
+   }
 }
