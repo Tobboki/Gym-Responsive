@@ -193,7 +193,8 @@ button {
 }
 
 .main {
-  gap: 2em;
+  display: flex;
+  flex-flow: column;
 }
 
 .button {
@@ -320,7 +321,6 @@ button {
   font-size: 5.25rem;
   font-weight: var(--fw-bold);
   color: var(--title-clr);
-  text-wrap: nowrap;
 }
 
 .home-subtitle,
