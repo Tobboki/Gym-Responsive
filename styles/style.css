@@ -576,18 +576,19 @@ button {
   }
 
   .nav-list {
-    width: 100%;
+    padding: 5em 0 0 3em;
+    height: 100%;
+    width: 50%;
     padding-block: 2em;
     position: fixed;
     top: 5em;
     right: -100%;
     display: flex;
     flex-flow: column;
-    align-items: center;
     gap: 1em;
     background-color: var(--body-clr);
     text-align: center;
-    box-shadow: 0 4px 4px hsla(30, 5%, 57%, 0.2);
+    border-left: 2px solid var(--primary-clr-gray);
     transition: right 0.4s ease-in-out;
   }
 
@@ -679,11 +680,29 @@ button {
   .section-title,
    .section-title-stroke {
      font-size: 1.125rem;
-   }
+  }
  
    .section-subtitle {
      font-size: 1.125rem;
-   }
+  }
+
+   /* Nav Bar */
+  .nav-list {
+    padding: 5em 0 0 3em;
+    height: 100%;
+    width: 80%;
+    padding-block: 2em;
+    position: fixed;
+    top: 5em;
+    right: -100%;
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+    background-color: var(--body-clr);
+    text-align: center;
+    border-left: 2px solid var(--primary-clr-gray);
+    transition: right 0.4s ease-in-out;
+  }
 
   /* Home */
   .home-title {
