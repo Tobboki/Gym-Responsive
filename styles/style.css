@@ -344,6 +344,7 @@ button {
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
 }
 
 .home-data {
@@ -409,9 +410,9 @@ button {
 }
 
 /* Company Logos Section */
-  .companies-logos {
-    padding-top: 0;
-  }
+.companies-logos {
+  padding-top: 0;
+}
 
 .company-logos-container {
   padding: 0.5em 0;
@@ -562,6 +563,106 @@ button {
 .choose-triangle-3 {
   width: 145px;
   background-color: var(--primary-clr);
+}
+
+/* Pricing Section */
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.pricing-card {
+  position: relative;
+  padding: 1em 2em;
+  background-color:var(--title-clr-black);
+  display: grid;
+  row-gap: 1em;
+  transition: background-color .4s;
+}
+
+.pricing-card:hover {
+  background-color: var(--primary-clr);
+  color: var(--title-clr-black);
+}
+
+.pricing-header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+
+.pricing-img-container {
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  width: 64px;
+  height: 64px;
+  background-color: var(--primary-clr-gray);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background-color .4s;
+}
+
+.pricing-img {
+  width: 50px;
+}
+
+.pricing-card:hover .pricing-img-container {
+  background-color: var(--primary-clr-alt);
+}
+.pricing-title {
+  font-weight: var(--fw-bold);
+}
+
+.pricing-number {
+  font-family: var(--primary-ff);
+  font-size: var(--big-fs);
+  font-weight: var(--fw-bold);
+  color: var(--title-clr);
+}
+
+.pricing-title,
+.pricing-number {
+  transition: color .4s;
+}
+
+.pricing-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+  transition: color .4s;
+}
+
+.pricing-item {
+  display: flex;
+  column-gap: 0.5em;
+  opacity: .3;
+}
+
+.pricing-card:hover .pricing-title,
+.pricing-card:hover .pricing-number,
+.pricing-card:hover .pricing-list {
+  color: var(--title-clr-black);
+}
+
+.pricing-item i {
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+  color: var(--primary-clr);
+  transition: color .4s;
+}
+
+.pricing-card:hover .pricing-item i {
+  color: var(--title-clr);
+}
+
+.available-feature {
+  opacity: 1;
+}
+
+.pricing .button {
+  background-color: white;
 }
 
 /* Scroll up */
@@ -787,7 +888,21 @@ button {
     grid-template-rows: 1fr 1fr;
     gap: 1em;
   }
-  
+
+  /* Pricing Section */
+  .pricing-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 546px) {
+  /* Pricing Section */
+  .pricing-container {
+    grid-template-columns: 285px;
+  }
 }
 
 @media screen and (max-width: 446px) {
