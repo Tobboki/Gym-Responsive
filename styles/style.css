@@ -377,7 +377,6 @@ button {
 }
 
 .home-img {
-  padding: 0.5em;
   margin: 0 auto;
   width: 550px;
   display: block;
@@ -490,6 +489,79 @@ button {
 
 .program-card:hover .program-button{
   transform: translateX(0.25em);
+}
+
+/* Choose Us Section */
+.choose {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.choose-content {
+  order: 1;
+}
+
+.choose .section-titles {
+  justify-content: initial;
+}
+
+.choose .section-data {
+  text-align: initial;
+}
+
+.choose-description {
+  margin-bottom: 2em;
+}
+
+.choose-data {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: flex-start;
+  row-gap: 1em;
+}
+
+.choose-group {
+  text-align: center;
+}
+
+.choose-number {
+  font-family: var(--secondary-ff);
+  font-size: var(--big-fs);
+  color: var(--title-clr);
+}
+
+.choose-img {
+  width: 350px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+}
+
+.choose-triangle {
+  position: absolute;
+  height: 475px;
+  display: block;
+  left: 0;
+  bottom: 0;
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+.choose-triangle-1 {
+  width: 545px;
+  background-color: var(--primary-clr-dark);
+}
+
+.choose-triangle-2 {
+  width: 345px;
+  background-color: var(--primary-clr-alt);
+}
+
+.choose-triangle-3 {
+  width: 145px;
+  background-color: var(--primary-clr);
 }
 
 /* Scroll up */
@@ -608,17 +680,52 @@ button {
     width: initial;
   }
 
-  /* Company Logos Section */
-  .company-logos-container {
-    padding: 1em;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-
   /* Program Section */
   .program-card {
     padding: .75em 1.5em;
   }
+
+  /* Choose Us Section */
+  .choose {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    row-gap: 2em;
+  }
+
+  .choose .section-titles {
+    justify-content: center;
+  }
+
+  .choose .section-subtitle,
+  .choose-description {
+    text-align: center;
+  }
+
+  .choose-content {
+    order: initial;
+    z-index: 1;
+  }
+
+  .choose-data {
+    justify-items: initial;
+  }
+
+  .choose-triangle {
+    height: 450px;
+  }
+
+  /* .choose-triangle-1 {
+    width: 545px;
+  }
+  
+  .choose-triangle-2 {
+    width: 345px;
+  }
+  
+  .choose-triangle-3 {
+    width: 145px;
+  } */
 
 }
 
@@ -666,6 +773,13 @@ button {
     width: 325px;
   }
 
+  /* Company Logos Section */
+  .company-logos-container {
+    padding: 0.5em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
   /* Program Section */
   .programs-container {
     display: grid;
@@ -673,6 +787,7 @@ button {
     grid-template-rows: 1fr 1fr;
     gap: 1em;
   }
+  
 }
 
 @media screen and (max-width: 446px) {
