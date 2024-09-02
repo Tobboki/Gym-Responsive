@@ -21,14 +21,6 @@ navLinks.forEach(link => link.addEventListener('click', () => {
   toggleMenu();
 }));
 
-/* Scroll up */
-const scrollUp = () => {
-  const scrollUpArrow = document.getElementById('scroll-up');
-  window.scrollY >= 350 ? scrollUpArrow.classList.add('show-scroll-up')
-                        : scrollUpArrow.classList.remove('show-scroll-up');
-};
-window.addEventListener('scroll', scrollUp);
-
 /* BMI Calculator Section */
 const calculatorForm  = document.getElementById('calculator-form');
 const heightInput  = document.getElementById('calculator-height');
@@ -66,3 +58,46 @@ const calculateBMI = (e) => {
 }
 
 calculatorForm.addEventListener('submit', calculateBMI);
+
+/* Newsletter section */
+const newsletterForm = document.getElementById('newsletter-form');
+const newsletterInput = document.getElementById('newsletter-input');
+const newsletterButton = document.getElementById('newsletter-button');
+const newsletterMassage = document.getElementById('newsletter-massage');
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  if (newsletterInput.value === '') {
+    newsletterMassage.style.color = 'red';
+
+    newsletterMassage.textContent = 'You must enter your email.';
+
+    setTimeout(() => {
+      newsletterMassage.textContent = '';
+    },3000);
+    
+  } else {
+    emailjs.sendForm('service_6dsy6rb', 'template_w8xkpbm', '#newsletter-form', 'wfR7X_0EcD1DdvfXJ').then( () => {
+      newsletterMassage.style.color = 'hsl(79, 72%, 55%)';
+
+      newsletterMassage.textContent = 'You subscribed successfully.';
+
+      setTimeout(() => {
+        newsletterMassage.textContent = '';
+      },3000);
+    });
+  }
+  
+}
+
+newsletterForm.addEventListener('submit', sendEmail);
+
+/* Scroll up */
+const scrollUp = () => {
+  const scrollUpArrow = document.getElementById('scroll-up');
+  window.scrollY >= 350 ? scrollUpArrow.classList.add('show-scroll-up')
+                        : scrollUpArrow.classList.remove('show-scroll-up');
+};
+
+window.addEventListener('scroll', scrollUp);
