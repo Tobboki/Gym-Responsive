@@ -314,7 +314,7 @@ button {
   font-weight: var(--fw-bold);
 }
 
-.nav-link:hover {
+.nav-link:hover a {
   color: var(--text-clr-light);
 }
 
