@@ -21,6 +21,29 @@ navLinks.forEach(link => link.addEventListener('click', () => {
   toggleMenu();
 }));
 
+/* Scroll Section active link */
+const sections = document.querySelectorAll('section[id]');
+
+const scrollActive = () => {
+  const scrollY = window.scrollY;
+
+  sections.forEach( currentSection => {
+    const sectionHeight = currentSection.offsetHeight;
+    const sectionTop = currentSection.offsetTop - 360 ;
+    const sectionId = currentSection.getAttribute('id');
+    const sectionClass = document.querySelector('.nav-list a[href*=' + sectionId + ']');
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      sectionClass.classList.add('active-nav-link');
+    } else {
+      sectionClass.classList.remove('active-nav-link');
+    }
+
+  });
+}
+
+window.addEventListener('scroll', scrollActive);
+
 /* BMI Calculator Section */
 const calculatorForm  = document.getElementById('calculator-form');
 const heightInput  = document.getElementById('calculator-height');

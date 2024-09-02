@@ -112,6 +112,7 @@ h3, h4 {
 /* Remove a elements text decorations */
 a {
   text-decoration: none;
+  color: var(--title-clr);
 }
 
 /* A elements that don't have a class get default styles */
@@ -258,7 +259,7 @@ button {
   transform: translateX(0.25rem);
 }
 
-.active-nav-link a {
+.active-nav-link {
   color: var(--primary-clr);
 }
 
