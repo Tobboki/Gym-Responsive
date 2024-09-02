@@ -192,7 +192,7 @@ button {
 .section {
   display: flex;
   flex-flow: column;
-  padding: 7em 0 0;
+  margin: 7em 0 0;
 }
 
 .section-data {
@@ -665,6 +665,76 @@ button {
   background-color: white;
 }
 
+/* BMI Calculator Section */
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  place-items: center;
+}
+
+.calculator-content {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.calculator-content .section-titles {
+  justify-content: initial;
+}
+
+.calculator-description {
+  margin-bottom: 1em;
+}
+
+.calculator-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+
+.calculator-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--primary-clr-dark);
+}
+
+.calculator-input {
+  padding: 1em;
+  width: 100%;
+  background-color: transparent;
+  color: var(--text-clr);
+  border: none;
+  outline: none;
+}
+
+.calculator-input::-webkit-inner-spin-button,
+.calculator-input::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.calculator-label {
+  position: absolute;
+  right: 1em;
+}
+
+.calculator-button {
+  margin-top: 1em;
+  width: 100%;
+  justify-content: center;
+  grid-column: 1 / 3;
+}
+
+.calculator-img {
+  width: 400px;
+}
+
+.calculator-result {
+  text-align: center;
+}
+
 /* Scroll up */
 .scroll-up {
   padding: 0.5em;
@@ -816,17 +886,10 @@ button {
     height: 450px;
   }
 
-  /* .choose-triangle-1 {
-    width: 545px;
+  /* BMI Calculator Section */
+  .calculator-img {
+    width: 200px;
   }
-  
-  .choose-triangle-2 {
-    width: 345px;
-  }
-  
-  .choose-triangle-3 {
-    width: 145px;
-  } */
 
 }
 
@@ -894,6 +957,31 @@ button {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
+  }
+
+  /* BMI Calculator Section */
+  .calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1em;
+  }
+
+  .calculator-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calculator-description {
+    text-align: center;
+  }
+
+  .calculator-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
 }
