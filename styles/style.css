@@ -931,6 +931,11 @@ button {
     height: 425px;
   }
 
+  /* BMI Calculator Section */
+  .calculator-img {
+    width: 200px;
+  }
+
 }
 
 /* Small Devices */
@@ -1007,11 +1012,6 @@ button {
 
   .choose-triangle {
     height: 450px;
-  }
-
-  /* BMI Calculator Section */
-  .calculator-img {
-    width: 200px;
   }
 
 }
