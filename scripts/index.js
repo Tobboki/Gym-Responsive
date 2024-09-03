@@ -124,3 +124,50 @@ const scrollUp = () => {
 };
 
 window.addEventListener('scroll', scrollUp);
+
+/* Scroll Reveal Animations */
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '60px',
+  duration: 2500,
+  delay: 400
+});
+
+/* home section */
+sr.reveal(`.home-data`);
+sr.reveal(`.home-img`, {
+  origin: 'bottom',
+  delay: 700
+});
+sr.reveal(`.company-logo`, {
+  interval: 100
+});
+
+/* Programs Section */
+sr.reveal(`.program-card`, {
+  interval: 100
+});
+
+/* Choose Us Section */
+sr.reveal(`.choose-content`, {
+  origin: 'right'
+});
+sr.reveal(`.choose-img`, {
+  origin: 'left'
+});
+
+/* Pricing Section */
+sr.reveal(`.pricing-card`, {
+  interval: 100
+});
+
+/* BMI Calculator Section */
+sr.reveal(`.calculator-content`, {
+  origin: 'left'
+});
+sr.reveal(`.calculator-img`, {
+  origin: 'right'
+});
+
+/* Footer Section */
+sr.reveal(`.footer-wrapper, .footer-group`);
