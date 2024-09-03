@@ -827,20 +827,22 @@ button {
 
 .footer-group {
   margin: 2em;
-  display: grid;
-  justify-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   row-gap: 1em;
 }
 
 .footer-social {
   display: flex;
   column-gap: 1em;
+  order: 1;
 }
 
 .footer-social-link {
-  padding: 0.35em;
+  padding: 0.25em;
   display: inline-flex;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   background-color: var(--primary-clr);
   color: var(--title-clr-black);
   border-radius: 50%;
@@ -854,7 +856,6 @@ button {
 .footer-copy {
   font: 1rem;
   color: var(--text-clr-light);
-  justify-self: center;
 }
 
 /* Scroll up */
@@ -1119,6 +1120,14 @@ button {
   .footer-wrapper {
     display: flex;
     flex-direction: column;
+  }
+
+  .footer-group {
+    flex-direction: column;
+  }
+
+  .footer-social {
+    order: initial;
   }
 
 }
