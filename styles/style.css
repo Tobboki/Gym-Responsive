@@ -952,12 +952,13 @@ button {
     width: 50%;
     padding-block: 2em;
     position: fixed;
-    top: 5em;
+    top: 3.6em;
     right: -100%;
     display: flex;
     flex-flow: column;
     gap: 1em;
-    background-color: var(--body-clr);
+    background-color:hsla(180, 12%, 8%, 0.8);
+    backdrop-filter: blur(1em);
     text-align: center;
     border-left: 2px solid var(--primary-clr-gray);
     transition: right 0.4s ease-in-out;
@@ -1137,6 +1138,7 @@ button {
   .pricing-container {
     grid-template-columns: 285px;
   }
+  
 }
 
 @media screen and (max-width: 446px) {
