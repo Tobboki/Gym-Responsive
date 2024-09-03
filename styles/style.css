@@ -266,7 +266,7 @@ button {
 /* *Styles* */
 /* Header */
 .header {
-  padding: 2em;
+  padding: 1em 2em;
   position: fixed;
   display: flex;
   align-items: center;
